@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geneomx — Medication Completion Infrastructure (V1)</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div id="toast" class="toast">Saved ✓</div>
+
+  <!-- 30-SECOND SNAPSHOT (MODAL) DOM -->
+  <div id="backdrop" class="modalBackdrop"></div>
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modalHd">
+      <div style="font-weight:950">30-Second Visit Snapshot</div>
+      <div class="btns" style="margin-top:0">
+        <button class="ghost mini" id="snapCopy">Copy</button>
+        <button class="ghost mini" id="snapPrint">Print</button>
+        <button class="danger mini" id="snapClose">Close</button>
+      </div>
+    </div>
+    <div class="modalBd">
+      <pre id="snapText"></pre>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="brandmark" title="Geneomx">
+          <img src="assets/geneomx-logo.webp" alt="Geneomx logo" />
+        </div>
+        <div>
+          <h1>Geneomx — Medication Completion Infrastructure (V1)</h1>
+          <p class="sub">Your Medication Companion for Smarter Health • Evidence transparency • text-only UI</p>
+        </div>
+      </div>
+      <div class="status">
+        <button class="ghost mini" id="btnShare">Share for review</button>
+        <div class="badge">User: <strong id="pillUser">Guest</strong></div>
+        <div class="badge">Plan: <strong id="pillPlan">Not started</strong></div>
+        <div class="badge">Check-ins: <strong id="pillChecks">0</strong></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- MAIN -->
+      <div class="card">
+        <div class="hd">
+          <div>
+            <h2 id="mainTitle">Account</h2>
+            <div class="desc" id="mainSub">Enter basic details to begin.</div>
+          </div>
+          <div class="steps" id="steps"></div>
+        </div>
+        <div class="bd" id="main"></div>
+      </div>
+
+      <!-- SIDE -->
+      <div class="card">
+        <div class="hd">
+          <div>
+            <h2>Summary</h2>
+            <div class="desc">What you’ve entered so far</div>
+          </div>
+          <div>
+            <button class="ghost" id="btnReset">Reset</button>
+          </div>
+        </div>
+        <div class="bd">
+          <div class="section" id="summaryTop"></div>
+          <div style="height:14px"></div>
+          <div class="list" id="side"></div>
+          <div style="height:14px"></div>
+          <div class="contactBox" id="contactBox"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
